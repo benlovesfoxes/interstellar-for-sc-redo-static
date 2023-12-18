@@ -4,9 +4,7 @@ var generatedCode = null;
 function loginForCodeGenerator() {
   var password = prompt("Enter the password to access the code generator:");
   
-  // Perform your authentication logic here
-  
-  if (password === "your_password") {
+  if (password === "72309") {
     loggedInForCodeGenerator = true;
     document.getElementById("code-generator-content").style.display = "block";
   } else {
