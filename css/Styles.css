@@ -1,27 +1,157 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
 
-.login-section,
-.code-generator-section,
-.link-generator-section {
-  display: none;
-  margin-bottom: 20px;
-}
+    h1 {
+      color: #333;
+    }
 
-button {
-  margin-top: 10px;
-}
+    .container {
+      display: flex;
+    }
 
-p {
-  margin-top: 10px;
-}
+    .login-section {
+      flex: 1;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
 
-a {
-  color: blue;
-  text-decoration: underline;
-  cursor: pointer;
-}
+    .code-section {
+      flex: 1;
+      background-color: #e6f2ff;
+      padding: 20px;
+      display: none;
+    }
+
+    .link-section {
+      flex: 1;
+      background-color: #f2e6ff;
+      padding: 20px;
+    }
+
+    .login-button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .logout-button {
+      background-color: #f44336;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .code-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .link-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .generate-button {
+      background-color: #008CBA;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Code Generator</h1>
+  <div class="container">
+    <div class="login-section">
+      <h2>Login</h2>
+      <button class="login-button">Login</button>
+      <button class="logout-button" style="display: none;">Logout</button>
+    </div>
+    <div class="code-section">
+      <h2>Code Generator</h2>
+      <input class="code-input" type="text" placeholder="Enter code generation logic">
+      <button class="generate-button">Generate Code</button>
+    </div>
+    <div class="link-section">
+      <h2>Link Generator</h2>
+      <input class="link-input" type="text" placeholder="Enter one-time code">
+      <button class="generate-button">Generate Link</button>
+    </div>
+  </div>
+
+  <script>
+    // Login functionality
+    const loginButton = document.querySelector('.login-button');
+    const logoutButton = document.querySelector('.logout-button');
+    const codeSection = document.querySelector('.code-section');
+
+    loginButton.addEventListener('click', () => {
+      const password = prompt('Enter password:');
+      if (password === 'your_password') {
+        codeSection.style.display = 'block';
+        loginButton.style.display = 'none';
+        logoutButton.style.display = 'inline-block';
+      } else {
+        alert('Incorrect password. Try again.');
+      }
+    });
+
+    logoutButton.addEventListener('click', () => {
+      codeSection.style.display = 'none';
+      loginButton.style.display = 'inline-block';
+      logoutButton.style.display = 'none';
+    });
+
+    // Code generation functionality
+    const codeInput = document.querySelector('.code-input');
+    const generateCodeButton = document.querySelector('.code-section .generate-button');
+
+    generateCodeButton.addEventListener('click', () => {
+      const codeLogic = codeInput.value;
+      // Generate code based on the logic
+      // Replace the following line with your actual code generation logic
+      const generatedCode = '12345';
+      alert('Generated code: ' + generatedCode);
+    });
+
+    // Link generation functionality
+    const linkInput = document.querySelector('.link-input');
+    const generateLinkButton = document.querySelector('.link-section .generate-button');
+
+    generateLinkButton.addEventListener('click', () => {
+      const oneTimeCode = linkInput.value;
+      // Generate link based on the one-time code
+      // Replace the following line with your actual link generation logic
+      const generatedLink = 'https://example.com/' + oneTimeCode;
+      alert('Generated link: ' + generatedLink);
+    });
+  </script>
+</body>
+</html>
