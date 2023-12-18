@@ -56,6 +56,7 @@ function generateCode() {
   if (loggedInForCodeGenerator) {
     generatedCode = generateRandomCode();
     document.getElementById("code").innerHTML = "Generated Code: " + generatedCode;
+    document.getElementById("generate-link-btn").disabled = false; // Enable the Generate Link button
   } else {
     alert("Please log in to generate a code");
   }
@@ -68,6 +69,7 @@ function generateLink() {
     var randomIndex = Math.floor(Math.random() * links.length);
     var generatedLink = links[randomIndex];
     document.getElementById("result").innerHTML = "Generated Link: <a href='" + generatedLink + "'>" + generatedLink + "</a>";
+    document.getElementById("generate-link-btn").disabled = true; // Disable the Generate Link button
   } else {
     document.getElementById("result").innerHTML = "Invalid code.";
   }
@@ -77,6 +79,7 @@ function logoutFromCodeGenerator() {
   loggedInForCodeGenerator = false;
   generatedCode = null;
   document.getElementById("code-generator-content").style.display = "none";
+  document.getElementById("generate-link-btn").disabled = true; // Disable the Generate Link button
 }
 
 function generateRandomCode() {
