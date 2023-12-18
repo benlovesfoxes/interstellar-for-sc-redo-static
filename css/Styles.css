@@ -9,7 +9,8 @@
 .link-generator-section {
   width: 30%;
   padding: 20px;
-  background-color: #f2f2f2;
+  background-color: #000;
+  color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
