@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Code Generator</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h1>Code Generator</h1>
+  <h1>Code and Link Generator</h1>
   <div class="container">
     <div class="login-section">
       <h2>Login</h2>
       <input type="password" id="password" placeholder="Enter password">
       <button class="login-button" onclick="login()">Login</button>
-      <button class="logout-button" style="display: none;" onclick="logout()">Logout</button>
+      <button class="logout-button" onclick="logout()" style="display: none;">Logout</button>
     </div>
     <div class="code-section">
       <h2>Code Generator</h2>
-      <input class="code-input" type="text" placeholder="Enter code generation logic">
       <button class="generate-button" onclick="generateCode()">Generate Code</button>
       <p id="generatedCode"></p>
     </div>
     <div class="link-section">
       <h2>Link Generator</h2>
-      <input class="link-input" type="text" placeholder="Enter one-time code">
+      <input type="text" class="link-input" placeholder="Enter code">
       <button class="generate-button" onclick="generateLink()">Generate Link</button>
       <p id="generatedLink"></p>
     </div>
