@@ -19,3 +19,9 @@ button {
 p {
   margin-top: 10px;
 }
+
+a {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
