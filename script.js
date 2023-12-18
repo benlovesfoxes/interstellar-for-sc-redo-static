@@ -9,7 +9,6 @@ function login() {
   
   if (username === "benlovesfoxes" && password === "72309") {
     loggedIn = true;
-    document.getElementById("login-section").style.display = "none";
     document.getElementById("code-generator-section").style.display = "block";
   } else {
     alert("Invalid username or password");
@@ -25,10 +24,22 @@ function generateCode() {
   }
 }
 
+function generateLink() {
+  var oneTimeCode = document.getElementById("one-time-code").value;
+  
+  if (oneTimeCode === generatedCode) {
+    var links = ["https://example.com/link1", "https://example.com/link2", "https://example.com/link3"];
+    var randomIndex = Math.floor(Math.random() * links.length);
+    var generatedLink = links[randomIndex];
+    document.getElementById("result").innerHTML = "Generated Link: <a href='" + generatedLink + "'>" + generatedLink + "</a>";
+  } else {
+    document.getElementById("result").innerHTML = "Invalid code.";
+  }
+}
+
 function logout() {
   loggedIn = false;
   generatedCode = null;
-  document.getElementById("login-section").style.display = "block";
   document.getElementById("code-generator-section").style.display = "none";
   document.getElementById("username").value = "";
   document.getElementById("password").value = "";
