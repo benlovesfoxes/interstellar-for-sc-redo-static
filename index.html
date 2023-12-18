@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
   <title>Code Generator</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <script src="script.js"></script>
 </head>
 <body>
   <h1>Code Generator</h1>
-  <form id="codeForm">
-    <label for="codeInput">Enter the one-time code:</label>
-    <input type="text" id="codeInput" required>
-    <button type="submit">Generate Link</button>
-  </form>
-  <div id="result"></div>
-  <script src="script.js"></script>
+  
+  <div id="login-section">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Log In</button>
+  </div>
+  
+  <div id="code-generator-section" style="display: none;">
+    <h2>Code Generator</h2>
+    <button onclick="generateCode()">Generate Code</button>
+    <p id="code"></p>
+    <button onclick="logout()">Log Out</button>
+  </div>
 </body>
 </html>
- 
