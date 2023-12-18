@@ -7,9 +7,11 @@ function login() {
   
   // Perform your authentication logic here
   
-  if (username === "benlovesfoxes" && password === "72309") {
+  if (username === "your_username" && password === "your_password") {
     loggedIn = true;
+    document.getElementById("login-section").style.display = "none";
     document.getElementById("code-generator-section").style.display = "block";
+    document.getElementById("link-generator-section").style.display = "block";
   } else {
     alert("Invalid username or password");
   }
@@ -40,7 +42,9 @@ function generateLink() {
 function logout() {
   loggedIn = false;
   generatedCode = null;
+  document.getElementById("login-section").style.display = "block";
   document.getElementById("code-generator-section").style.display = "none";
+  document.getElementById("link-generator-section").style.display = "none";
   document.getElementById("username").value = "";
   document.getElementById("password").value = "";
 }
