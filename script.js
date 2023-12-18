@@ -11,7 +11,9 @@ function login() {
   var password = document.getElementById("password").value;
   if (password === "72309") {
     loggedInForCodeGenerator = true;
-    document.getElementById("codeGeneratorSection").style.display = "block";
+    document.querySelector(".code-section").style.display = "block";
+    document.querySelector(".login-button").style.display = "none";
+    document.querySelector(".logout-button").style.display = "inline-block";
     document.getElementById("password").value = "";
   } else {
     alert("Incorrect password. Please try again.");
@@ -29,7 +31,7 @@ function generateCode() {
 }
 
 function generateLink() {
-  var code = document.getElementById("codeInput").value;
+  var code = document.getElementById("linkInput").value;
   var codeObject = generatedCodes.find(function (obj) {
     return obj.code === code && !obj.used;
   });
@@ -51,5 +53,7 @@ function generateLink() {
 
 function logout() {
   loggedInForCodeGenerator = false;
-  document.getElementById("codeGeneratorSection").style.display = "none";
+  document.querySelector(".code-section").style.display = "none";
+  document.querySelector(".login-button").style.display = "inline-block";
+  document.querySelector(".logout-button").style.display = "none";
 }
