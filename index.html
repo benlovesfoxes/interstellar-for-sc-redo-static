@@ -7,6 +7,13 @@
 <body>
   <h1>Code and Link Generator</h1>
   
+  <div id="login-section">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Log In</button>
+  </div>
+  
   <div id="code-generator-section" style="display: none;">
     <h2>Code Generator</h2>
     <button onclick="generateCode()">Generate Code</button>
@@ -14,7 +21,7 @@
     <button onclick="logout()">Log Out</button>
   </div>
   
-  <div id="link-generator-section">
+  <div id="link-generator-section" style="display: none;">
     <h2>Link Generator</h2>
     <input type="text" id="one-time-code" placeholder="One-Time Code">
     <button onclick="generateLink()">Generate Link</button>
