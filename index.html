@@ -2,26 +2,51 @@
 <html>
 <head>
   <title>Code and Link Generator</title>
-  <script src="script.js"></script>
+  <style>
+    .login-section {
+      float: right;
+      width: 50%;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+
+    .code-generator-section {
+      float: left;
+      width: 50%;
+      padding: 20px;
+      background-color: #f9f9f9;
+      display: none;
+    }
+
+    .link-generator-section {
+      float: left;
+      width: 50%;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+  </style>
 </head>
 <body>
-  <h1>Code and Link Generator</h1>
-  
-  <div id="code-generator-section">
+  <div class="login-section">
+    <h2>Login</h2>
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="code-generator-section" id="codeGeneratorSection">
     <h2>Code Generator</h2>
-    <button onclick="loginForCodeGenerator()">Log In</button>
-    <div id="code-generator-content" style="display: none;">
-      <button onclick="generateCode()">Generate Code</button>
-      <p id="code"></p>
-      <button onclick="logoutFromCodeGenerator()">Log Out</button>
-    </div>
+    <button onclick="generateCode()">Generate Code</button>
+    <p id="generatedCode"></p>
+    <button onclick="logout()">Logout</button>
   </div>
-  
-  <div id="link-generator-section">
+
+  <div class="link-generator-section">
     <h2>Link Generator</h2>
-    <input type="text" id="one-time-code" placeholder="One-Time Code">
-    <button id="generate-link-btn" onclick="generateLink()">Generate Link</button>
-    <p id="result"></p>
+    <input type="text" id="codeInput" placeholder="Enter code">
+    <button onclick="generateLink()">Generate Link</button>
+    <p id="generatedLink"></p>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
