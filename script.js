@@ -37,7 +37,12 @@ function generateLink() {
   if (codeObject) {
     var randomIndex = Math.floor(Math.random() * links.length);
     var link = links[randomIndex] + "?code=" + code;
-    document.getElementById("generatedLink").innerHTML = "Generated Link: " + link;
+    var generatedLinkElement = document.getElementById("generatedLink");
+    generatedLinkElement.innerHTML = "Generated Link: ";
+    var linkElement = document.createElement("a");
+    linkElement.href = link;
+    linkElement.textContent = link;
+    generatedLinkElement.appendChild(linkElement);
     codeObject.used = true;
   } else {
     alert("Invalid code. Please try again.");
