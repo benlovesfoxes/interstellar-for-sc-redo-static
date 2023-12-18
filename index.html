@@ -1,30 +1,164 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Code and Link Generator</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Code Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #333;
+      color: #fff;
+    }
+
+    h1 {
+      color: #fff;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .login-section {
+      flex: 1;
+      background-color: #222;
+      padding: 20px;
+    }
+
+    .code-section {
+      flex: 1;
+      background-color: #333;
+      padding: 20px;
+      display: none;
+    }
+
+    .link-section {
+      flex: 1;
+      background-color: #222;
+      padding: 20px;
+    }
+
+    .login-button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .logout-button {
+      background-color: #f44336;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .code-input,
+    .link-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #444;
+      border: none;
+      color: #fff;
+    }
+
+    .generate-button {
+      background-color: #008CBA;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .generate-button:hover {
+      background-color: #005b79;
+    }
+  </style>
 </head>
 <body>
+  <h1>Code Generator</h1>
   <div class="container">
     <div class="login-section">
-      <h2>Login for Code Generator</h2>
-      <input type="password" id="password" placeholder="Enter password">
-      <button onclick="login()">Login</button>
+      <h2>Login</h2>
+      <button class="login-button">Login</button>
+      <button class="logout-button" style="display: none;">Logout</button>
     </div>
-    <div class="code-generator-section" id="codeGeneratorSection">
+    <div class="code-section">
       <h2>Code Generator</h2>
-      <button onclick="generateCode()">Generate Code</button>
-      <p id="generatedCode"></p>
+      <input class="code-input" type="text" placeholder="Enter code generation logic">
+      <button class="generate-button">Generate Code</button>
     </div>
-    <div class="link-generator-section">
+    <div class="link-section">
       <h2>Link Generator</h2>
-      <input type="text" id="codeInput" placeholder="Enter code">
-      <button onclick="generateLink()">Generate Link</button>
-      <p id="generatedLink"></p>
+      <input class="link-input" type="text" placeholder="Enter one-time code">
+      <button class="generate-button">Generate Link</button>
     </div>
-    <button onclick="logout()">Logout</button>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Login functionality
+    const loginButton = document.querySelector('.login-button');
+    const logoutButton = document.querySelector('.logout-button');
+    const codeSection = document.querySelector('.code-section');
+
+    loginButton.addEventListener('click', () => {
+      const password = prompt('Enter password:');
+      if (password === 'your_password') {
+        codeSection.style.display = 'block';
+        loginButton.style.display = 'none';
+        logoutButton.style.display = 'inline-block';
+      } else {
+        alert('Incorrect password. Try again.');
+      }
+    });
+
+    logoutButton.addEventListener('click', () => {
+      codeSection.style.display = 'none';
+      loginButton.style.display = 'inline-block';
+      logoutButton.style.display = 'none';
+    });
+
+    // Code generation functionality
+    const codeInput = document.querySelector('.code-input');
+    const generateCodeButton = document.querySelector('.code-section .generate-button');
+
+    generateCodeButton.addEventListener('click', () => {
+      const codeLogic = codeInput.value;
+      // Generate code based on the logic
+      // Replace the following line with your actual code generation logic
+      const generatedCode = '12345';
+      alert('Generated code: ' + generatedCode);
+    });
+
+    // Link generation functionality
+    const linkInput = document.querySelector('.link-input');
+    const generateLinkButton = document.querySelector('.link-section .generate-button');
+
+    generateLinkButton.addEventListener('click', () => {
+      const oneTimeCode = linkInput.value;
+      // Generate link based on the one-time code
+      // Replace the following line with your actual link generation logic
+      const generatedLink = 'https://example.com/' + oneTimeCode;
+      alert('Generated link: ' + generatedLink);
+    });
+  </script>
 </body>
 </html>
