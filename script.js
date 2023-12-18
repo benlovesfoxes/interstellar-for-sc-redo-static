@@ -1,7 +1,10 @@
 var loggedInForCodeGenerator = false;
 var generatedCodes = [];
 var links = [
-  // Your list of links here
+  "https://www.algebraxyz.info/",
+  "https://www.algebraxyz.com/",
+  "https://wisdom.educational.sciencevictory.org/",
+  // Add your links here
 ];
 
 function login() {
@@ -29,7 +32,7 @@ function generateLink() {
   var code = document.getElementById("codeInput").value;
   if (generatedCodes.includes(code)) {
     var randomIndex = Math.floor(Math.random() * links.length);
-    var link = links[randomIndex];
+    var link = links[randomIndex] + "?code=" + code;
     document.getElementById("generatedLink").innerHTML = "Generated Link: " + link;
   } else {
     alert("Invalid code. Please try again.");
