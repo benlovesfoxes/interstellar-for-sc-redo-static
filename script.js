@@ -1,28 +1,25 @@
-var loggedIn = false;
+var loggedInForCodeGenerator = false;
 var generatedCode = null;
 
-function login() {
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
+function loginForCodeGenerator() {
+  var password = prompt("Enter the password to access the code generator:");
   
   // Perform your authentication logic here
   
-  if (username === "your_username" && password === "your_password") {
-    loggedIn = true;
-    document.getElementById("login-section").style.display = "none";
-    document.getElementById("code-generator-section").style.display = "block";
-    document.getElementById("link-generator-section").style.display = "block";
+  if (password === "your_password") {
+    loggedInForCodeGenerator = true;
+    document.getElementById("code-generator-content").style.display = "block";
   } else {
-    alert("Invalid username or password");
+    alert("Invalid password");
   }
 }
 
 function generateCode() {
-  if (loggedIn) {
+  if (loggedInForCodeGenerator) {
     generatedCode = generateRandomCode();
     document.getElementById("code").innerHTML = "Generated Code: " + generatedCode;
   } else {
-    alert("Please log in first");
+    alert("Please log in to generate a code");
   }
 }
 
@@ -39,14 +36,10 @@ function generateLink() {
   }
 }
 
-function logout() {
-  loggedIn = false;
+function logoutFromCodeGenerator() {
+  loggedInForCodeGenerator = false;
   generatedCode = null;
-  document.getElementById("login-section").style.display = "block";
-  document.getElementById("code-generator-section").style.display = "none";
-  document.getElementById("link-generator-section").style.display = "none";
-  document.getElementById("username").value = "";
-  document.getElementById("password").value = "";
+  document.getElementById("code-generator-content").style.display = "none";
 }
 
 function generateRandomCode() {
