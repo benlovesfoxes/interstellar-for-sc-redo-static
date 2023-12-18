@@ -31,7 +31,7 @@ function generateCode() {
 }
 
 function generateLink() {
-  var code = document.getElementById("linkInput").value;
+  var code = document.querySelector(".link-input").value;
   var codeObject = generatedCodes.find(function (obj) {
     return obj.code === code && !obj.used;
   });
