@@ -1,27 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+}
+
 .container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
 }
 
-.login-section,
-.code-generator-section,
-.link-generator-section {
+.login-section {
+  flex: 1;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.code-section {
+  flex: 1;
+  background-color: #e6f2ff;
+  padding: 20px;
   display: none;
-  margin-bottom: 20px;
 }
 
-button {
-  margin-top: 10px;
+.link-section {
+  flex: 1;
+  background-color: #f2e6ff;
+  padding: 20px;
 }
 
-p {
-  margin-top: 10px;
+.login-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
-a {
-  color: blue;
-  text-decoration: underline;
+.logout-button {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.code-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.link-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.generate-button {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
